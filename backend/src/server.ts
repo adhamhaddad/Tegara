@@ -3,10 +3,16 @@ import helmet from 'helmet';
 import cors from 'cors';
 import { Server } from 'socket.io';
 import configs from './configs';
+import logger from './middlewares/logger';
+import admin_route_controller from './controllers/Admin';
+import user_route_controller from './controllers/User';
+import info_route_controller from './controllers/Information';
+import order_route_controller from './controllers/Order';
+import password_route_controller from './controllers/Password';
 
 // Express App
-const app: Application = express();
-const port: Number = Number(configs.port) || 8080;
+export const app: Application = express();
+export const port: Number = Number(configs.port) || 8080;
 
 // CORS Configurations
 const corsOptions = {
@@ -22,7 +28,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors(corsOptions));
 
 // App Controllers
-
+admin_route_controller(app, logger as NextFunction);
+user_route_controller(app, logger as NextFunction);
+info_route_controller(app, logger as NextFunction);
+order_route_controller(app, logger as NextFunction);
+password_route_controller(app, logger as NextFunction);
 
 // App Server
 const server = app.listen(port, () => {
@@ -37,4 +47,3 @@ io.on('connect', (socket) => {
     console.log('User disconnected');
   });
 });
-export default app;
