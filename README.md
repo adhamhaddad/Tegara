@@ -1,5 +1,4 @@
 # Tegara
-ecommerce website
 ## Description
 
 This is a E-commerce platform called `Tegara`.
