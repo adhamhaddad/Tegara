@@ -9,6 +9,7 @@ import user_route_controller from './controllers/User';
 import info_route_controller from './controllers/Information';
 import order_route_controller from './controllers/Order';
 import password_route_controller from './controllers/Password';
+import product_route_controller from './controllers/Product';
 
 // Express App
 export const app: Application = express();
@@ -33,6 +34,8 @@ user_route_controller(app, logger as NextFunction);
 info_route_controller(app, logger as NextFunction);
 order_route_controller(app, logger as NextFunction);
 password_route_controller(app, logger as NextFunction);
+product_route_controller(app, logger as NextFunction);
+
 
 // App Server
 const server = app.listen(port, () => {
