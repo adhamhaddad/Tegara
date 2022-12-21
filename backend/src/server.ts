@@ -10,6 +10,8 @@ import info_route_controller from './controllers/Information';
 import order_route_controller from './controllers/Order';
 import password_route_controller from './controllers/Password';
 import product_route_controller from './controllers/Product';
+import pr_router_controller from './controllers/ProductRate';
+import ur_router_controller from './controllers/UserRate';
 
 // Express App
 export const app: Application = express();
@@ -35,7 +37,8 @@ info_route_controller(app, logger as NextFunction);
 order_route_controller(app, logger as NextFunction);
 password_route_controller(app, logger as NextFunction);
 product_route_controller(app, logger as NextFunction);
-
+pr_router_controller(app, logger as NextFunction);
+ur_router_controller(app, logger as NextFunction);
 
 // App Server
 const server = app.listen(port, () => {

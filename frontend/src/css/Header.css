@@ -1,0 +1,34 @@
+header {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .navigation {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+header .navigation li {
+    height: 100%;
+}
+header .navigation li a {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: 0 10px;
+    color: var(--base-color-dark);
+    transition: color .5s ease-in-out;
+}
+
+header .navigation li a span {
+
+    font-size: 14px;
+}
+header .navigation li a:hover {
+    color: var(--base-hover-dark);
+    transition: color .5s ease-in-out;
+}
