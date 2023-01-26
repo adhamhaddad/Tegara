@@ -30,9 +30,11 @@
     "@types/socket.io": "^3.0.2",
     "@types/typescript": "^2.0.0",
     "nodemon": "^2.0.20",
+    "prettier": "^2.8.3",
     "ts-node": "^10.9.1"
   },
   "scripts": {
+    "prettier": "prettier --write src/**/*.ts",
     "build": "tsc",
     "dev": "nodemon src/server.ts",
     "start": "node dist/server.js",

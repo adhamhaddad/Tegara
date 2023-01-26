@@ -1,0 +1,12 @@
+{
+  "lang": {
+    "en": "English",
+    "ar": "Arabic"
+  },
+  "header": {
+    "product": "Products",
+    "profile": "Profile",
+    "orders": "Orders",
+    "support": "Support"
+  }
+}

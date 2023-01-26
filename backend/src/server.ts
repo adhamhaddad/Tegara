@@ -15,7 +15,7 @@ import ur_router_controller from './controllers/UserRate';
 
 // Express App
 export const app: Application = express();
-export const port: Number = Number(configs.port) || 8080;
+export const port: Number = configs.port || 8080;
 
 // CORS Configurations
 const corsOptions = {

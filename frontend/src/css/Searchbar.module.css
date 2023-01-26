@@ -1,14 +1,15 @@
 .searchbar {
     width: 250px;
-    height: 100%;
+    height: 50px;
     overflow: hidden;
     padding: 2px;
+    border: 1px solid #c4c4c4;
+    margin-left: 10px;
+    margin-right: auto;
 }
+
 .searchbar input {
     width: 100%;
     height: 100%;
-    border-radius: 2px;
-    border: 1px solid var(--base-hover-light);
-    /* background-color: orange; */
     padding: 0px 5px;
 }

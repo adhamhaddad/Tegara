@@ -78,19 +78,20 @@ class Admin {
       const result = await connection.query(sql, [Object.values(a)[0]]);
       if (result.rows.length) {
         const check = checkPass(a.password, result.rows[0].password);
-        if (check) {
-          const admin_SQL = `SELECT user_id, username FROM admins WHERE ${
-            Object.keys(a)[0]
-          }=$1`;
-          const admin_result = await connection.query(admin_SQL, [
-            Object.values(a)[0]
-          ]);
-          connection.release();
-          return admin_result.rows[0];
-        } else {
-          connection.release();
-          throw new Error(`Password is incorrect`);
-        }
+        console.log(check);
+        // if (check) {
+        //   const admin_SQL = `SELECT user_id, username FROM admins WHERE ${
+        //     Object.keys(a)[0]
+        //   }=$1`;
+        //   const admin_result = await connection.query(admin_SQL, [
+        //     Object.values(a)[0]
+        //   ]);
+        //   connection.release();
+        //   return admin_result.rows[0];
+        // } else {
+        //   connection.release();
+        //   throw new Error(`Password is incorrect`);
+        // }
       }
       return null;
     } catch (err) {
