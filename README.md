@@ -17,33 +17,16 @@ Open postgres terminal with: `psql postgres`
 
 1- `CREATE DATABASE tegara;`
 
-2- `CREATE USER admin WITH PASSWORD 'admin123';`
+2- `CREATE ROLE admin WITH PASSWORD 'admin';`
 
-3- `GRANT ALL PRIVILEGES ON DATABASE tegara TO admin;`
+3- `ALTER ROLE admin WITH SUPERUSER CREATEROLE CREATEDB LOGIN;`
 
+4- `GRANT ALL PRIVILEGES ON DATABASE tegara TO admin;`
 ### Create Environment
 
-1. From the root of the repo, navigate backend folder `cd backend` First create file called `.env` and enter the following code:
+1. First to install the node_modules run `npm install` or `yarn`. After installation is done start the api in dev mode with `npm run dev` or `yarn dev`.
 
-```
-ENV=dev
-HOST=localhost
-PORT=8000
-# Database
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=tegara
-DB_USERNAME=admin
-DB_PASSWORD=admin123
-# Secret Keys
-SECRET_TOKEN=adham123!
-SALT_ROUNDS=10
-SECRET_PEPER=adham123!
-```
-
-2. Second to install the node_modules run `npm install` or `yarn`. After installation is done start the api in dev mode with `npm run dev` or `yarn dev`.
-
-3. Third without closing the terminal in step 2, navigate to the frontend `cd frontend` to intall the node_modules `npm install` or `yarn`. After installation is done start the frontend server with `npm run start` or `yarn start`.
+2. Second without closing the terminal in step 2, navigate to the frontend `cd frontend` to intall the node_modules `npm install` or `yarn`. After installation is done start the frontend server with `npm run start` or `yarn start`.
 
 Note: open `Linker/frontend/src/utils/api-urls.js`
 
